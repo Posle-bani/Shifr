@@ -10,6 +10,9 @@ using namespace std::chrono;
 //Ключ матрица, заданная изначально
 std:: vector<int> key = { 1, 2, 3, 7, 5, 4, 8, 2, 7 };
 
+//алфавит
+
+
 int Hill_encryption(std::string word)
 {
 	//std::string word;
@@ -40,7 +43,7 @@ int Hill_encryption(std::string word)
 	}
 
 	auto end = steady_clock::now();
-	auto elapsed_ms = duration_cast<milliseconds>(end - start);
+	auto elapsed_ms = duration_cast<microseconds>(end - start);
 
 	//std::cout << std::endl << outputword << std::endl;
 	//std::cout << std::endl << elapsed_ms.count() << std::endl;
@@ -48,3 +51,4 @@ int Hill_encryption(std::string word)
 
 	return elapsed_ms.count();
 }
+
