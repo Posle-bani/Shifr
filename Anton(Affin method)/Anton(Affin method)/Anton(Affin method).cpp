@@ -24,7 +24,7 @@ int search1(char a, const std::string& alphabet) {
     return j;
 }
 
-int LOT(int a, int b) {
+int NOD(int a, int b) {
     int result;
     for (int i = a; i > 0; i--) {
         if (a % i == 0 && b % i == 0) {
@@ -71,7 +71,7 @@ int Evklid(int a, int b, int c) {
 std::string Zashifr(const std::string& alphabet, std::string& word_to_shifr) {
     std::cout << "Input simple number of alphabet size:" << std::endl;
     int alfa = GetCorrectNumber(1, 52);
-    while (LOT(alfa, alphabet.size()) != 1) {
+    while (NOD(alfa, alphabet.size()) != 1) {
         std::cout << "Input correct number!" << std::endl;
         alfa = GetCorrectNumber(1, 52);
     }
