@@ -24,7 +24,7 @@ int search1(char a, const std::string& alphabet) {
     return j;
 }
 
-int LOT(int a, int b) {
+int NOD(int a, int b) {
     int result;
     for (int i = a; i > 0; i--) {
         if (a % i == 0 && b % i == 0) {
