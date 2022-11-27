@@ -1,0 +1,9 @@
+﻿  Shifr_Hilla.cpp
+C:\Users\Дарья\OneDrive\Рабочий стол\SHIFR\Shifr\Karpova\Shifr_Hilla\Shifr_Hilla.cpp(36,11): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Дарья\OneDrive\Рабочий стол\SHIFR\Shifr\Karpova\Shifr_Hilla\Shifr_Hilla.cpp(52,25): warning C4244: return: преобразование "_Rep" в "int", возможна потеря данных
+          with
+          [
+              _Rep=__int64
+          ]
+MSVCRTD.lib(exe_main.obj) : error LNK2019: ссылка на неразрешенный внешний символ _main в функции "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ).
+C:\Users\Дарья\OneDrive\Рабочий стол\SHIFR\Shifr\Karpova\Shifr_Hilla\Debug\Shifr_Hilla.exe : fatal error LNK1120: неразрешенных внешних элементов: 1
