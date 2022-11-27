@@ -176,7 +176,7 @@ int main() {
     auto start = system_clock::now();
     Enmessage(index, matrix);
     auto finish = system_clock::now();
-    auto duration = duration_cast<nanoseconds>(finish - start).count();
+    auto duration = duration_cast<microseconds>(finish - start).count();
     cout << "\nduration: " << duration << endl;
 
 }
