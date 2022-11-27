@@ -1,0 +1,5 @@
+﻿  Anton(Affin method).cpp
+C:\Users\Anton_K\Desktop\2Kurs\shifr\Shifr\Anton(Affin method)\Anton(Affin method)\Anton(Affin method).cpp(76,37): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Anton_K\Desktop\2Kurs\shifr\Shifr\Anton(Affin method)\Anton(Affin method)\Anton(Affin method).cpp(103,68): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Anton_K\Desktop\2Kurs\shifr\Shifr\Anton(Affin method)\Anton(Affin method)\Anton(Affin method).cpp(115,92): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+  Anton(Affin method).vcxproj -> C:\Users\Anton_K\Desktop\2Kurs\shifr\Shifr\Anton(Affin method)\Anton(Affin method)\x64\Debug\Anton(Affin method).exe
