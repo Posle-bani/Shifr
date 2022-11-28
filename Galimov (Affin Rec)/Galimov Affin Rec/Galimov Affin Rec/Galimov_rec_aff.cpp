@@ -46,7 +46,7 @@ void slovo_kolvo(string& slovo, int& kolvo)
     //cout << "¬ведите слово" << endl;
     //getline(cin >> ws, slovo);                  //пробелы тоже считает!!!!!!!!!!!
     kolvo = slovo.length();
-    cout << "Kol-vo elementov v slove: " << kolvo << endl;
+    //cout << "Kol-vo elementov v slove: " << kolvo << endl;
 }
 
 void Galimov(string& slovo)
@@ -75,7 +75,7 @@ void Galimov(string& slovo)
             {
                 shifr.push_back((poz * alpha[i] + beta[i]) % alphavit.size()); //заношу в вектор позицию зашифрованной буквы
                 sh_poz = (poz * alpha[i] + beta[i]) % alphavit.size();
-                cout << alphavit[sh_poz];//вывожу зашифрованную букву        или cout << alphavit[sh_poz-1];     
+                //cout << alphavit[sh_poz];//вывожу зашифрованную букву        или cout << alphavit[sh_poz-1];     
             }
             else
             {
@@ -83,7 +83,7 @@ void Galimov(string& slovo)
                 beta.push_back((beta[i - 2] + beta[i - 1]) % alphavit.size());  //считаю новую бетту
                 shifr.push_back((poz * alpha[i] + beta[i]) % alphavit.size());  //заношу в вектор позицию зашифрованной буквы
                 sh_poz = (poz * alpha[i] + beta[i]) % alphavit.size();
-                cout << alphavit[sh_poz]; //вывожу зашифрованную букву           или cout << alphavit[sh_poz-1];     
+                //cout << alphavit[sh_poz]; //вывожу зашифрованную букву           или cout << alphavit[sh_poz-1];     
             }
         }
     }

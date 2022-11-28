@@ -1,15 +1,16 @@
-﻿//#include <iostream>
-//#include <locale>
-//#include <vector>
-//#include <numeric>
-//#include <string>
-//#include <algorithm>
-//#include <chrono>
-//
-//using namespace std;
-//
-////Рекуррентный аффинный шифр
-//
+﻿#include <iostream>
+#include <locale>
+#include <vector>
+#include <numeric>
+#include <string>
+#include <algorithm>
+#include <chrono>
+#include "Galimov_rec_aff.h"
+
+using namespace std;
+
+//Рекуррентный аффинный шифр
+
 //int proverka(int &x, int min, int max)
 //{
 //    cin >> x;
@@ -92,11 +93,12 @@
 //    long long microseconds = chrono::duration_cast<chrono::microseconds>(elapsed).count();//вывод в мкрс
 //    cout << endl << "Рекуррентный аффинный шифр" << "  Затраченное на шифрование время: " << microseconds << " мкрс" << endl;
 //}
-//
-//int main()
-//{
-//    string slovo="sdgkjshdgjkhsdgsdhfkkskKHGJHEJHJHDKUSHUKHGhsfhgkjshdfhskdgksjf";//тут ввести чему оно равно
-//    setlocale(LC_ALL, "Russian");
-//    Galimov(slovo);
-//}
-//
+
+int main()
+{
+    string slovo="abcd";//тут ввести чему оно равно
+    setlocale(LC_ALL, "Russian");
+    Galimov(slovo);
+
+}
+
