@@ -70,13 +70,13 @@ int Evklid(int a, int b, int c) {
 
 std::string Zashifr(const std::string& alphabet, std::string& word_to_shifr) {
     std::cout << "Input simple number of alphabet size:" << std::endl;
-    int alfa = GetCorrectNumber(1, 52);
+    int alfa = GetCorrectNumber(0, 51);
     while (NOD(alfa, alphabet.size()) != 1) {
         std::cout << "Input correct number!" << std::endl;
-        alfa = GetCorrectNumber(1, 52);
+        alfa = GetCorrectNumber(0, 51);
     }
     std::cout << "Input random number (<52):" << std::endl;
-    int beta = GetCorrectNumber(1, 52);
+    int beta = GetCorrectNumber(0, 51);
     int j;
     std::string shifr_result;
     std::cout << "Enter word to shifr:" << std::endl;
@@ -98,8 +98,8 @@ std::string Zashifr(const std::string& alphabet, std::string& word_to_shifr) {
 
 std::string Rashif(const std::string& shifr, const std::string& alphabet) {
     std::cout << "Input key(two values)" << std::endl;
-    int alfa_1 = Evklid(GetCorrectNumber(1, 52), alphabet.size(), 1);
-    int beta = GetCorrectNumber(1, 52);
+    int alfa_1 = Evklid(GetCorrectNumber(0, 51), alphabet.size(), 1);
+    int beta = GetCorrectNumber(0, 51);
     int j;
     std::string word_result;
     auto start_1 = std::chrono::system_clock::now();
