@@ -4,5 +4,5 @@
 #include <string>
 #include <cctype>
 
-int Encryption_pleifer();
+int Encryption_pleifer(string word);
 
