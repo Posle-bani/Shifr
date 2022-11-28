@@ -4,70 +4,16 @@
 #include <algorithm>
 #include <chrono>
 
-void code();
-void decode();
+void code(std::string message);
+void decode(std::string message);
 std::string vigenereCode(std::string message, std::string key);
 std::string vigenereDecode(std::string message, std::string key);
 bool alphabetOnly = true;
 
 using namespace std::chrono;
 
-int main_menu()
-{
-    unsigned int choice = 1;
-    std::string actualMode;
-
-    while(choice > 0 && choice <= 3) {
-        actualMode = (alphabetOnly) ? "Alphabet Only" : "ASCII";
-        std::cout << "What do you want to do?" << std::endl
-                  << "1) Encrypt a message" << std::endl
-                  << "2) Decrypt a message" << std::endl
-                  << "0) Quit"<< std::endl
-                  << "> ";
-
-        std::cin >> choice;
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-        switch(choice) {
-            case 1: 
-                code();
-                break;
-            case 2:
-                decode();
-                break;
-            case 0:
-                break;
-        }
-
-        std::cout << std::endl << std::endl;
-    }
-
-    return 0;
-}
-
-
-void code() {
-    unsigned int choice = 0;
-    std::cout << std::endl << "What do you want to do?" << std::endl
-                           << "1) Write the message in standard input" << std::endl
-                           << "2) Quit";
-
-    while(choice < 1 || choice > 2) {
-        std::cout << std::endl << "> ";
-        std::cin >> choice;
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    }
-
-    std::string message;
-
-    if(choice == 1) {
-        std::cout << std::endl << "Your message > ";
-        getline(std::cin, message);
-    }
-    else if(choice == 2) {
-        main_menu();   }
+void code(std::string message) {
+    unsigned int choice = 0;    
 
     std::string key;
 
@@ -85,12 +31,9 @@ void code() {
     std::cout << "\nEncrypt time: "<< duration_1 << " microseconds"<< std::endl;
 }
 
-void decode() {
-    std::string message;
+void decode(std::string message) {
+    
     std::string key;
-
-    std::cout << "Your message > ";
-    getline(std::cin, message);
 
     std::cout << "Your key > ";
     getline(std::cin, key);
