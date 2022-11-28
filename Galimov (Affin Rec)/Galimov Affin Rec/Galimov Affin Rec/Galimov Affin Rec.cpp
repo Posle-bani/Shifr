@@ -95,7 +95,7 @@ void Galimov(string &slovo)
 
 int main()
 {
-    string slovo="IamloveDasha";//тут ввести чему оно равно
+    string slovo="sdgkjshdgjkhsdgsdhfkkskKHGJHEJHJHDKUSHUKHGhsfhgkjshdfhskdgksjf";//тут ввести чему оно равно
     setlocale(LC_ALL, "Russian");
     Galimov(slovo);
 }
