@@ -128,14 +128,14 @@ void Affin_method(const std::string& word_to_shifr)
     //std::cout << "Input key(two values)"<<std::endl;
     std::string shifr = Zashifr(alphabet, word_to_shifr);
     std::cout <<"Output shifr: "<< shifr << std::endl;
-    std::cout << "Try to rashifr our shifr:" << std::endl;
-    std::string word_after_rashifr = Rashif(shifr, alphabet);
-    while(word_after_rashifr != word_to_shifr){
-        std::cout << "Rashifr word: " << word_after_rashifr << std::endl;
-        std::cout << "Rashifr is not equal word to shifr, new try:" << std::endl;
-        word_after_rashifr = Rashif(shifr, alphabet);
-    }
-    std::cout << "Rashifr correct word: " << word_after_rashifr << std::endl;
+    //std::cout << "Try to rashifr our shifr:" << std::endl;
+    //std::string word_after_rashifr = Rashif(shifr, alphabet);
+    //while(word_after_rashifr != word_to_shifr){
+      //  std::cout << "Rashifr word: " << word_after_rashifr << std::endl;
+       // std::cout << "Rashifr is not equal word to shifr, new try:" << std::endl;
+        //word_after_rashifr = Rashif(shifr, alphabet);
+    //}
+    //std::cout << "Rashifr correct word: " << word_after_rashifr << std::endl;
 }
 
 //int main() {
