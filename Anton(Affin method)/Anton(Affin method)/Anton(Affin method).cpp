@@ -75,7 +75,7 @@ std::string Zashifr(const std::string& alphabet, std::string& word_to_shifr) {
         std::cout << "Input correct number!" << std::endl;
         alfa = GetCorrectNumber(1, 52);
     }
-   
+    std::cout << "Input random number (<52):" << std::endl;
     int beta = GetCorrectNumber(1, 52);
     int j;
     std::string shifr_result;
