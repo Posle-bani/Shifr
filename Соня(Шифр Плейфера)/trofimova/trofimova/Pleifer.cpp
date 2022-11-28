@@ -156,7 +156,7 @@ void FindId(char(&matrix)[5][5], vector <int>& index, string& message) {
     }
 }
 
-int Encryption_pleifer() {
+int Encryption_pleifer(string word) {
     vector<int> index;
     string keyword = "", message = "";
     string alphabet = "abcdefghijklmnoprstuvwxyz";
