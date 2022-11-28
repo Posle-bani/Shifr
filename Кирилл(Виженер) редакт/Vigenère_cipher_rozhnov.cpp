@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <string>
 #include <chrono>
+#include "Vigenere.h"
 
 using namespace std;
 using namespace chrono;
@@ -32,7 +33,7 @@ string Decode(string text, string key) {
     return code;
 }
 
-int main() {
+int Vigenere_cipher() {
     setlocale(LC_ALL, "Russian");
     string txt, key;
     char x;
