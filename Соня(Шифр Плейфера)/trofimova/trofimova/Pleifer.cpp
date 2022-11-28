@@ -11,7 +11,7 @@ using namespace std::chrono;
 
 void Enmessage(vector<int> index, char matrix[5][5]) {
     int a = 0, b = 0;
-    cout << "encrypted sequence: " << endl;
+    /*cout << "encrypted sequence: " << endl;*/
     for (int i = 0; i <= index.size() - 3; i += 4) {
         a = index[i + 3] + 1;
         // если на одной строке
