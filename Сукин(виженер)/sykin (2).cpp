@@ -12,7 +12,7 @@ bool alphabetOnly = true;
 
 using namespace std::chrono;
 
-int main_menu_syki()
+int main_menu()
 {
     unsigned int choice = 1;
     std::string actualMode;
@@ -67,8 +67,7 @@ void code() {
         getline(std::cin, message);
     }
     else if(choice == 2) {
-        main_menu_syki();
-    }
+        main_menu();   }
 
     std::string key;
 

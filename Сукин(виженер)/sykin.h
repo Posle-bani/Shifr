@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <chrono>
 
-int main_menu_syki();
+int main_menu();
 void code();
 
 std::string vigenereCode(std::string message, std::string key);
