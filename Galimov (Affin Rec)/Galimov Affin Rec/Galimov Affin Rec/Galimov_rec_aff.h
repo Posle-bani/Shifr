@@ -9,7 +9,7 @@
 
 using namespace std;
 
-int proverka(int& x, int min, int max);
+int check(int& x, int min, int max);
 
 void input_a_b(vector <int>& alpha, vector <int>& beta);
 
