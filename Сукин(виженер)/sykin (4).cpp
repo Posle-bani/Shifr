@@ -17,7 +17,7 @@ void code(std::string message) {
 
     std::string key;
 
-    std::cout << "Choose a key > ";
+    //std::cout << "Choose a key > ";
     getline(std::cin, key);
 
     if(key.size() == 0)     { std::cout << "Key's length is 0, quitting"; return; }
@@ -25,7 +25,7 @@ void code(std::string message) {
     
     std::string result = vigenereCode(message, key);
 
-    std::cout << "Result : " << result;
+   // std::cout << "Result : " << result;
     auto finish_1 = system_clock::now();
     auto duration_1 = duration_cast<microseconds>(finish_1-start_1).count();
     std::cout << "\nEncrypt time: "<< duration_1 << " microseconds"<< std::endl;
@@ -35,7 +35,7 @@ void decode(std::string message) {
     
     std::string key;
 
-    std::cout << "Your key > ";
+    //std::cout << "Your key > ";
     getline(std::cin, key);
 
     if(key.size() == 0)     { std::cout << "Key's length is 0, quitting"; return; }
@@ -43,7 +43,7 @@ void decode(std::string message) {
     auto start_2 = system_clock::now();
     std::string result = vigenereDecode(message, key);
 
-    std::cout << "Result : " << result;
+   // std::cout << "Result : " << result;
     auto finish_2 = system_clock::now();
     auto duration_2 = duration_cast<microseconds>(finish_2-start_2).count();
     std::cout << "\nDecrypt time: "<< duration_2 << " microseconds"<< std::endl;
@@ -82,9 +82,9 @@ std::string vigenereDecode(std::string message, std::string key) {
         for(unsigned int i = 0; i < message.size(); i++) {
             if((placeOfChar = alphabet.find(message[i])) == std::string::npos)  { return "Error, characters are not part of the following string : " + alphabet; }
             decodedChar = (placeOfChar - (key[counterKey]%53));
-            std::cout<< "1: " << (int)decodedChar << std::endl;
+           // std::cout<< "1: " << (int)decodedChar << std::endl;
             if(decodedChar < 0)   { decodedChar+=53; }
-            std::cout<< "2: " << (int)decodedChar << std::endl;
+            //std::cout<< "2: " << (int)decodedChar << std::endl;
             decodedString += alphabet[decodedChar];
             ++counterKey%=sizeOfKey;
         }
