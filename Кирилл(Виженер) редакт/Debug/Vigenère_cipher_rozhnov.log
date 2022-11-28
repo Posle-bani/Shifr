@@ -1,5 +1,2 @@
-﻿  Vigenère_cipher_rozhnov.cpp
-C:\Users\Кирилл\source\repos\Vigenère_cipher_rozhnov\Vigenère_cipher_rozhnov\Vigenère_cipher_rozhnov.cpp(13,23): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Кирилл\source\repos\Vigenère_cipher_rozhnov\Vigenère_cipher_rozhnov\Vigenère_cipher_rozhnov.cpp(21,23): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Кирилл\source\repos\Vigenère_cipher_rozhnov\Vigenère_cipher_rozhnov\Vigenère_cipher_rozhnov.cpp(29,23): warning C4018: <: несоответствие типов со знаком и без знака
-  Vigenère_cipher_rozhnov.vcxproj -> C:\Users\Кирилл\source\repos\Vigenère_cipher_rozhnov\Debug\Vigenère_cipher_rozhnov.exe
+﻿MSVCRTD.lib(exe_main.obj) : error LNK2019: ссылка на неразрешенный внешний символ _main в функции "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ).
+C:\Users\Кирилл\source\repos\Vigenère_cipher_rozhnov\Debug\Vigenère_cipher_rozhnov.exe : fatal error LNK1120: неразрешенных внешних элементов: 1
