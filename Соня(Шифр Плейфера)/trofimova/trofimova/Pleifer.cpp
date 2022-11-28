@@ -11,36 +11,36 @@ using namespace std::chrono;
 
 void Enmessage(vector<int> index, char matrix[5][5]) {
     int a = 0, b = 0;
-    cout << "encrypted sequence: " << endl;
+    /*cout << "encrypted sequence: " << endl;*/
     for (int i = 0; i <= index.size() - 3; i += 4) {
         a = index[i + 3] + 1;
         // если на одной строке
         if (index[i] == index[i + 2] && a < 5) {
-            cout.width(5);
-            cout << matrix[index[i]][index[i + 1] + 1] << matrix[index[i + 2]][a];
+            /*cout.width(5);
+            cout <<*/ matrix[index[i]][index[i + 1] + 1] << matrix[index[i + 2]][a];
         }
         // если на одной строке и у края
         if (index[i] == index[i + 2] && a >= 5) {
             a = 0;
-            cout.width(5);
-            cout << matrix[index[i]][index[i + 1] + 1] << matrix[index[i + 2]][a];
+            /*cout.width(5);
+            cout <<*/ matrix[index[i]][index[i + 1] + 1] << matrix[index[i + 2]][a];
         }
         b = index[i + 2] + 1;
         // если в одном столбце
         if (index[i + 1] == index[i + 3] && b < 5) {
-            cout.width(5);
-            cout << matrix[index[i] + 1][index[i + 1]] << matrix[b][index[i + 3]];
+            /*cout.width(5);
+            cout << */matrix[index[i] + 1][index[i + 1]] << matrix[b][index[i + 3]];
         }
         // если в одном столбце и у края
         if (index[i + 1] == index[i + 3] && b >= 5) {
             b = 0;
-            cout.width(5);
-            cout << matrix[index[i] + 1][index[i + 1]] << matrix[b][index[i + 3]];
+            /*cout.width(5);
+            cout << */matrix[index[i] + 1][index[i + 1]] << matrix[b][index[i + 3]];
         }
 
         if (index[i] != index[i + 2] && index[i + 1] != index[i + 3]) {
-            cout.width(5);
-            cout << matrix[index[i + 2]][index[i + 1]] << matrix[index[i]][index[i + 3]];
+            /*cout.width(5);
+            cout << */matrix[index[i + 2]][index[i + 1]] << matrix[index[i]][index[i + 3]];
         }
     }
 }
@@ -80,46 +80,46 @@ void DeleteKeyLetters(string& keyword, string& alphabet) {
         }
     }
 }
-void CinMessageCheck(string& message) {
+void CinMessageCheck(string& word) {
     int p = 0;
     while (p == 0) {
         cout << "enter massage: ";
-        getline(cin, message);
-        message.erase(remove_if(message.begin(), message.end(), isspace), message.end());
+        getline(cin, word);
+        word.erase(remove_if(word.begin(), word.end(), isspace), word.end());
 
 
-        for (int i = 0; i < message.length(); i++) {
-            if (isupper(message[i])) message[i] = tolower(message[i]);
+        for (int i = 0; i < word.length(); i++) {
+            if (isupper(word[i])) word[i] = tolower(word[i]);
         }
 
 
-        for (int i = 0; i < message.length(); i++) {
-            if (isalpha(message[i])) p = 1;
+        for (int i = 0; i < word.length(); i++) {
+            if (isalpha(word[i])) p = 1;
             else {
-                cout << "symbol " << message[i] << " is not appropriate!! " << endl;
+                cout << "symbol " << word[i] << " is not appropriate!! " << endl;
                 p = 0;
                 break;
             }
         }
     }
 }
-void DoubleMessageCheck(string& message) {
-    for (int i = 0; i < message.length(); i++) {
-        if (message[i] == message[i + 1]) message.insert(i + 1, 1, 'x');
+void DoubleMessageCheck(string& word) {
+    for (int i = 0; i < word.length(); i++) {
+        if (word[i] == word[i + 1]) word.insert(i + 1, 1, 'x');
     }
 }
-void AddSymbol(string& message) {
-    if (message.length() % 2 != 0) message.push_back('x');
+void AddSymbol(string& word) {
+    if (word.length() % 2 != 0) word.push_back('x');
 }
-void BygramsFormation(string& message) {
-    for (int i = 0; i < message.length(); i += 2) {
-        cout.width(5);
-        cout << message[i] << message[i + 1];
+void BygramsFormation(string& word) {
+    for (int i = 0; i < word.length(); i += 2) {
+        /*cout.width(5);
+        cout <<*/ word[i] << word[i + 1];
     }
-    cout << endl;
+    /*cout << endl;*/
 }
 void MatrixCreation(char(&matrix)[5][5], string& keyword, string& alphabet) {
-    cout << "key matrix: " << endl;
+    /*cout << "key matrix: " << endl;*/
     int k = 0, m = 0;
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 5; j++) {
@@ -135,19 +135,19 @@ void MatrixCreation(char(&matrix)[5][5], string& keyword, string& alphabet) {
     }
 
 }
-void PrintMatrix(char(&matrix)[5][5]) {
-    for (int i = 0; i < 5; i++) {
-        for (int j = 0; j < 5; j++) {
-            cout << matrix[i][j] << " ";
-        }
-        cout << endl;
-    }
-}
-void FindId(char(&matrix)[5][5], vector <int>& index, string& message) {
-    for (int i = 0; i < message.length(); i++) {
+//void PrintMatrix(char(&matrix)[5][5]) {
+//    for (int i = 0; i < 5; i++) {
+//        for (int j = 0; j < 5; j++) {
+//            cout << matrix[i][j] << " ";
+//        }
+//        cout << endl;
+//    }
+//}
+void FindId(char(&matrix)[5][5], vector <int>& index, string& word) {
+    for (int i = 0; i < word.length(); i++) {
         for (int j = 0; j < 5; j++) {
             for (int k = 0; k < 5; k++) {
-                if (message[i] == matrix[j][k]) {
+                if (word[i] == matrix[j][k]) {
                     index.push_back(j);
                     index.push_back(k);
                 }
@@ -158,7 +158,7 @@ void FindId(char(&matrix)[5][5], vector <int>& index, string& message) {
 
 int Encryption_pleifer(string word) {
     vector<int> index;
-    string keyword = "", message = "";
+    string keyword = "", word = "";
     string alphabet = "abcdefghijklmnoprstuvwxyz";
     char matrix[5][5];
 
@@ -166,12 +166,12 @@ int Encryption_pleifer(string word) {
     DeleteDouble(keyword);
     DeleteKeyLetters(keyword, alphabet);
     MatrixCreation(matrix, keyword, alphabet);
-    PrintMatrix(matrix);
-    CinMessageCheck(message);
-    DoubleMessageCheck(message);
-    AddSymbol(message);
-    BygramsFormation(message);
-    FindId(matrix, index, message);
+   /* PrintMatrix(matrix);*/
+    CinMessageCheck(word);
+    DoubleMessageCheck(word);
+    AddSymbol(word);
+    BygramsFormation(word);
+    FindId(matrix, index, word);
 
     for (int i = 0; i < index.size(); i += 2) cout << index[i] << " " << index[i + 1] << "   ";
     cout << endl;
