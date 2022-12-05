@@ -26,5 +26,8 @@
     <ClInclude Include="Shifr_Hilla.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="Header.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
