@@ -1,16 +1,16 @@
-﻿#include <iostream>
-#include <locale>
-#include <vector>
-#include <numeric>
-#include <string>
-#include <algorithm>
-#include <chrono>
-#include "Galimov_rec_aff.h"
-
-using namespace std;
-
-//Рекуррентный аффинный шифр
-
+﻿//#include <iostream>
+//#include <locale>
+//#include <vector>
+//#include <numeric>
+//#include <string>
+//#include <algorithm>
+//#include <chrono>
+//#include "Galimov_rec_aff.h"
+//
+//using namespace std;
+//
+////Рекуррентный аффинный шифр
+//
 //struct keys
 //{
 //    int affreca1 = 1, affrecb1 = 1, affreca2 = 1, affrecb2 = 1;
@@ -69,13 +69,14 @@ using namespace std;
 //    }
 //    //cout << endl << "Recurent Affin Shifr" << endl;
 //}
-
+//
 //void deshifr_Galimov(keys& key)
 //{
 //    string sh_slovo;
-//    int kolvo_sh_bukv;
+//    int kolvo_sh_bukv,sh_poz,poz;
 //    vector <char> alphavit(256);
 //    vector <int> alpha, beta;
+//    char sh_el;
 //    zapoln_alphavit(alphavit);//алфавит заполняю
 //    zapoln_keys(key, alpha, beta);//ключи забираются из структуры
 //    cout << "Введите шифрованный текст" << endl;
@@ -85,19 +86,26 @@ using namespace std;
 //    {
 //
 //    }
-//    else
+//    else//до 2 элементов
 //    {
-//
+//        for (int i = 0; i < 2; i++)
+//        {
+//            sh_el = sh_slovo[i];
+//            vector<char>::iterator it = find(alphavit.begin(), alphavit.end(), sh_el);
+//            sh_poz= distance(alphavit.begin(), it);//позиция зашифрованной буквы в алфавите
+//            poz = (sh_poz - beta[i]) / alpha[i];
+//            cout << alphavit[poz];
+//        }
 //    }
 //}
-
-int main()
-{
-    //setlocale(LC_ALL, "Russian");
-    keys key;
-    string slovo="ABCD";//тут ввести чему оно равно  
-    Galimov(slovo,key);
-
-    //deshifr_Galimov(key);
-}
-
+//
+//int main()
+//{
+//    setlocale(LC_ALL, "Russian");
+//    keys key;
+//    string slovo="ABCD";//тут ввести чему оно равно  
+//    Galimov(slovo,key);
+//
+//    deshifr_Galimov(key);
+//}
+//

@@ -9,10 +9,11 @@
 
 using namespace std;
 
-struct keys
-{
-    int affreca1 = 26, affrecb1 = 6, affreca2 = 6, affrecb2 = 2;
-};
+//struct keys
+//{
+//    int affreca1 = 26, affrecb1 = 6, affreca2 = 6, affrecb2 = 2;
+//
+//};
 
 void zapoln_alphavit(vector <char>& alphavit);
 

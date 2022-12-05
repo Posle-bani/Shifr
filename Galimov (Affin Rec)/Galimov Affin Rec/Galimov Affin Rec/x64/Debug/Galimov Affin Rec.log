@@ -1,6 +1,8 @@
 ﻿  Galimov Affin Rec.cpp
+D:\ВУЗ\АС\3 семак\Алгоритм языки\Shifr\Galimov (Affin Rec)\Galimov Affin Rec\Galimov Affin Rec\Galimov Affin Rec.cpp(42,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\ВУЗ\АС\3 семак\Алгоритм языки\Shifr\Galimov (Affin Rec)\Galimov Affin Rec\Galimov Affin Rec\Galimov Affin Rec.cpp(53,27): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+D:\ВУЗ\АС\3 семак\Алгоритм языки\Shifr\Galimov (Affin Rec)\Galimov Affin Rec\Galimov Affin Rec\Galimov Affin Rec.cpp(84,38): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\ВУЗ\АС\3 семак\Алгоритм языки\Shifr\Galimov (Affin Rec)\Galimov Affin Rec\Galimov Affin Rec\Galimov Affin Rec.cpp(95,29): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
   Galimov_rec_aff.cpp
-D:\ВУЗ\АС\3 семак\Алгоритм языки\Shifr\Galimov (Affin Rec)\Galimov Affin Rec\Galimov Affin Rec\Galimov_rec_aff.cpp(36,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-D:\ВУЗ\АС\3 семак\Алгоритм языки\Shifr\Galimov (Affin Rec)\Galimov Affin Rec\Galimov Affin Rec\Galimov_rec_aff.cpp(47,27): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
   Generating Code...
   Galimov Affin Rec.vcxproj -> D:\ВУЗ\АС\3 семак\Алгоритм языки\Shifr\Galimov (Affin Rec)\Galimov Affin Rec\x64\Debug\Galimov Affin Rec.exe
