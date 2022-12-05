@@ -67,15 +67,15 @@ int Evklid(int a, int b, int c) {
     }
 }
 
-std::string Zashifr(const std::string& alphabet, const std::string& word_to_shifr) {
-    std::cout << "Input simple number of alphabet size:" << std::endl;
-    int alfa = GetCorrectNumber(1, (int)alphabet.size()-1);
-    while (NOD(alfa, (int)alphabet.size()) != 1) {
-        std::cout << "Input correct number!" << std::endl;
-        alfa = GetCorrectNumber(1, (int)alphabet.size() - 1);
-    }
-    std::cout << "Input random number (<Alphabet size):" << std::endl;
-    int beta = GetCorrectNumber(0, (int)alphabet.size() - 1);
+std::string Zashifr(const std::string& alphabet, const std::string& word_to_shifr, const int& alfa, const int& beta) {
+    //std::cout << "Input simple number of alphabet size:" << std::endl;
+    //int alfa = GetCorrectNumber(1, (int)alphabet.size()-1);
+    //while (NOD(alfa, (int)alphabet.size()) != 1) {
+        //std::cout << "Input correct number key!" << std::endl;
+        //alfa = GetCorrectNumber(1, (int)alphabet.size() - 1);
+    //}
+    //std::cout << "Input random number (<Alphabet size):" << std::endl;
+    //int beta = GetCorrectNumber(0, (int)alphabet.size() - 1);
     int j;
     std::string shifr_result;
     //std::cout << "Enter word to shifr:" << std::endl;
@@ -120,15 +120,19 @@ std::string Rashif(const std::string& shifr, const std::string& alphabet) {
     return word_result;
 }
 
-void Affin_method(const std::string& word_to_shifr)
+void Affin_method(const std::string& word_to_shifr, const int& alfa, const int& beta)
 {
     //std::string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     std::string alphabet = "\n !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
     std::cout << "Alphabet size: " << alphabet.size() << std::endl;
+    while (NOD(alfa, (int)alphabet.size()) != 1) { //убрать во время защиты
+        std::cout << "Input correct number key!" << std::endl;//убрать во время защиты
+        //alfa = GetCorrectNumber(1, (int)alphabet.size() - 1);
+    }
     //std::string word_to_shifr;
     //std::cout << "Input key(two values)"<<std::endl;
-    std::string shifr = Zashifr(alphabet, word_to_shifr);
-    std::cout <<"Output shifr: "<< shifr << std::endl;
+    std::string shifr = Zashifr(alphabet, word_to_shifr, alfa, beta);
+    //std::cout <<"Output shifr: "<< shifr << std::endl;
     //std::cout << "Try to rashifr our shifr:" << std::endl;
     //std::string word_after_rashifr = Rashif(shifr, alphabet);
     //while(word_after_rashifr != word_to_shifr){
