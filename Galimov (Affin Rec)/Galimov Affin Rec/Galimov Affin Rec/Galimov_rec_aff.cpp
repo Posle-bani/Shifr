@@ -15,7 +15,7 @@ void zapoln_alphavit(vector <char>& alphavit) //заполнение алфавита всей кодиров
     iota(alphavit.begin(), alphavit.end(), 'A');
 }
 
-void zapoln_keys(keys& key, vector <int>& alpha, vector <int>& beta)  //переприсваивание нужных мне ключей из структуры
+void zapoln_keys(Encryption key, vector <int>& alpha, vector <int>& beta)  //переприсваивание нужных мне ключей из структуры
 {
     alpha.resize(2);
     beta.resize(2);
@@ -25,7 +25,7 @@ void zapoln_keys(keys& key, vector <int>& alpha, vector <int>& beta)  //переприс
     beta[1] = key.affrecb2;
 }
 
-void Galimov(string& slovo, keys& key)  //сама функция
+void Galimov(string& slovo, Encryption key)  //сама функция
 {
     int kolvo = 0, poz = 0, sh_poz = 0;
     vector <char> alphavit(256);

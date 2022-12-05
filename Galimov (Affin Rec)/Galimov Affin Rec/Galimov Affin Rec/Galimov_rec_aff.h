@@ -17,7 +17,7 @@ using namespace std;
 
 void zapoln_alphavit(vector <char>& alphavit);
 
-void zapoln_keys(keys& key, vector <int>& alpha, vector <int>& beta);
+void zapoln_keys(Encryption key, vector <int>& alpha, vector <int>& beta);
 
-void Galimov(string& slovo,keys&keys);
+void Galimov(string& slovo, Encryption keys);
 
