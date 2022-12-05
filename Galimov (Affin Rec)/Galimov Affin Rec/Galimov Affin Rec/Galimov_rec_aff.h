@@ -19,5 +19,5 @@ void zapoln_alphavit(vector <char>& alphavit);
 
 void zapoln_keys(Encryption key, vector <int>& alpha, vector <int>& beta);
 
-void Galimov(string& slovo, Encryption keys);
+void Galimov(Encryption keys);
 
