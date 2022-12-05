@@ -3,71 +3,24 @@
 #include <fstream>
 #include <algorithm>
 #include <chrono>
+#include <map>
 
-void code();
-void decode();
+void code(std::string message);
+void decode(std::string message);
 std::string vigenereCode(std::string message, std::string key);
 std::string vigenereDecode(std::string message, std::string key);
 bool alphabetOnly = true;
 
 using namespace std::chrono;
 
-int main()
-{
-    unsigned int choice = 1;
-    std::string actualMode;
+std::map<char, char> my_map = { //.,-/!?<>{}[]^*+=#%
+    { 'A', '.' },
+    { 'B', '2' },
+    { 'C', '3' }
+};
 
-    while(choice > 0 && choice <= 3) {
-        actualMode = (alphabetOnly) ? "Alphabet Only" : "ASCII";
-        std::cout << "What do you want to do?" << std::endl
-                  << "1) Encrypt a message" << std::endl
-                  << "2) Decrypt a message" << std::endl
-                  << "0) Quit"<< std::endl
-                  << "> ";
-
-        std::cin >> choice;
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-        switch(choice) {
-            case 1: 
-                code();
-                break;
-            case 2:
-                decode();
-                break;
-            case 0:
-                break;
-        }
-
-        std::cout << std::endl << std::endl;
-    }
-
-    return 0;
-}
-
-void code() {
-    unsigned int choice = 0;
-    std::cout << std::endl << "What do you want to do?" << std::endl
-                           << "1) Write the message in standard input" << std::endl
-                           << "2) Quit";
-
-    while(choice < 1 || choice > 2) {
-        std::cout << std::endl << "> ";
-        std::cin >> choice;
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    }
-
-    std::string message;
-
-    if(choice == 1) {
-        std::cout << std::endl << "Your message > ";
-        getline(std::cin, message);
-    }
-    else if(choice == 2) {
-        main();
-    }
+void code(std::string message) {
+    unsigned int choice = 0;    
 
     std::string key;
 
@@ -85,12 +38,9 @@ void code() {
     std::cout << "\nEncrypt time: "<< duration_1 << " microseconds"<< std::endl;
 }
 
-void decode() {
-    std::string message;
+void decode(std::string message) {
+    
     std::string key;
-
-    std::cout << "Your message > ";
-    getline(std::cin, message);
 
     std::cout << "Your key > ";
     getline(std::cin, key);
@@ -112,16 +62,18 @@ std::string vigenereCode(std::string message, std::string key) {
     std::string codedString;
     unsigned int placeOfChar;
     if(alphabetOnly) {
-        std::string alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
-        for(unsigned int i = 0; i < message.size(); i++) {
+        std::string alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ .,-/!?<>{}[]^*+=#%";
+        for(unsigned int i = 0; i < message.size(); i++) {                         //.,-/!?<>{}[]^*+=#%
             if((placeOfChar = alphabet.find(message[i])) == std::string::npos)  { return "Error, characters are not part of the following string : " + alphabet; }
             codedChar = (placeOfChar + key[counterKey]%53)%53;
+            //std::cout << codedChar << std::endl;
             codedString += alphabet[codedChar];
             ++counterKey%=sizeOfKey;
         }
     } else {
         for(unsigned int i = 0; i < message.size(); i++) {
             codedChar = (message[i] + key[counterKey])%256;
+            
             codedString += codedChar;
             ++counterKey%=sizeOfKey;
         }
@@ -135,13 +87,13 @@ std::string vigenereDecode(std::string message, std::string key) {
     std::string decodedString;
     unsigned int placeOfChar;
     if(alphabetOnly) {
-        std::string alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+        std::string alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ .,-/!?’»<>{}[]^*+=#%’";
         for(unsigned int i = 0; i < message.size(); i++) {
             if((placeOfChar = alphabet.find(message[i])) == std::string::npos)  { return "Error, characters are not part of the following string : " + alphabet; }
             decodedChar = (placeOfChar - (key[counterKey]%53));
-            std::cout<< "1: " << (int)decodedChar << std::endl;
+           // std::cout<< "1: " << (int)decodedChar << std::endl;
             if(decodedChar < 0)   { decodedChar+=53; }
-            std::cout<< "2: " << (int)decodedChar << std::endl;
+            //std::cout<< "2: " << (int)decodedChar << std::endl;
             decodedString += alphabet[decodedChar];
             ++counterKey%=sizeOfKey;
         }
@@ -155,4 +107,3 @@ std::string vigenereDecode(std::string message, std::string key) {
     }
     return decodedString;
 }
-

@@ -1,0 +1,5 @@
+﻿  Vigenère_cipher_rozhnov.cpp
+C:\Users\Кирилл\source\repos\Vigenère_cipher_rozhnov\Vigenère_cipher_rozhnov\Vigenère_cipher_rozhnov.cpp(14,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Кирилл\source\repos\Vigenère_cipher_rozhnov\Vigenère_cipher_rozhnov\Vigenère_cipher_rozhnov.cpp(25,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Кирилл\source\repos\Vigenère_cipher_rozhnov\Vigenère_cipher_rozhnov\Vigenère_cipher_rozhnov.cpp(33,23): warning C4018: <: несоответствие типов со знаком и без знака
+  Vigenère_cipher_rozhnov.vcxproj -> C:\Users\Кирилл\source\repos\Vigenère_cipher_rozhnov\Debug\Vigenère_cipher_rozhnov.exe
