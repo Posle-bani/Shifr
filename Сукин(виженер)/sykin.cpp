@@ -22,7 +22,7 @@ void code(std::string word) {
     getline(std::cin, keyword);
 
     if(keyword.size() == 0)     { std::cout << "keyword's length is 0, quitting"; return; }
-    auto start_1 = system_clock::now();
+    //auto start_1 = system_clock::now();
     
     std::string result = vigenereCode(word, keyword);
 
@@ -41,7 +41,7 @@ void decode(std::string word) {
 
     if(keyword.size() == 0)     { std::cout << "keyword's length is 0, quitting"; return; }
 
-    auto start_2 = system_clock::now();
+    //auto start_2 = system_clock::now();
     std::string result = vigenereDecode(word, keyword);
 
     //std::cout << "Result : " << result;

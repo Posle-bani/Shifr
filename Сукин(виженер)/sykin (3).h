@@ -14,6 +14,6 @@ std::string vigenereDecode(std::string message, std::string key);
 struct Shifr
 {
 	int a=3;
-	string word="hutjoidfl;swpva0esronbhkcpx;/a4etbgrcdx][.tugbtvraec[]dtugdsl;:)";
-	string keyword="abcdefghr";
+	std::string word="hutjoidfl;swpva0esronbhkcpx;/a4etbgrcdx][.tugbtvraec[]dtugdsl;:)";
+	std::string keyword="abcdefghr";
 };
