@@ -6,7 +6,7 @@
 using namespace std;
 using namespace chrono;
 
-string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&'()*+,-./0123456789:;<=>?@ ";
 
 // функция получения кода символа
 //ищем сивмол в алфавите и возращаем его номер.
@@ -94,3 +94,24 @@ int main() {
         << "\n" << duration_cast<microseconds>(end - start).count() << " microseconds\n"
         << duration_cast<nanoseconds>(end - start).count() << " nanoseconds\n";
 }
+/*
+string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&'()*+,-./0123456789:;<=>?@";
+string znaki = "#$%&'()*+,-./0123456789:;<#$%&'()*+,-./0123456789:;<=>?@";
+
+// функция получения кода символа
+//ищем сивмол в алфавите и возращаем его номер.
+int keycode(char s) {
+    for (int i = 0; i < alphabet.length(); i++) {//для i меньше длины алфавита увеличивается на одно значение. начинаем с нуля, так как для шифра индексы для букв начинаются с нуля.
+        for (int c = 0; c < znaki.length(); c++)
+        {
+            if (alphabet[i] == znaki[c]) {
+                (s == znaki[c]);
+                return c;
+            }
+            else
+                (s == alphabet[i]);
+            return i;
+        }
+    }
+    return 0;//если после прохождения цикла не нашлась буква, то возвращаем ноль.
+}*/
