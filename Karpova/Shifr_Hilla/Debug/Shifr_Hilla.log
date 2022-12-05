@@ -1,17 +1,17 @@
 ﻿  Shifr_Hilla.cpp
-C:\Users\Дарья\OneDrive\Рабочий стол\SHIFR\Shifr\Karpova\Shifr_Hilla\Shifr_Hilla.cpp(42,20): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Дарья\OneDrive\Рабочий стол\SHIFR\Shifr\Karpova\Shifr_Hilla\Shifr_Hilla.cpp(43,21): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Дарья\OneDrive\Рабочий стол\SHIFR\Shifr\Karpova\Shifr_Hilla\Shifr_Hilla.cpp(57,11): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Дарья\OneDrive\Рабочий стол\SHIFR\Shifr\Karpova\Shifr_Hilla\Shifr_Hilla.cpp(74,25): warning C4244: аргумент: преобразование "_Rep" в "int", возможна потеря данных
+C:\Users\Дарья\OneDrive\Рабочий стол\SHIFR\Shifr\Karpova\Shifr_Hilla\Shifr_Hilla.cpp(17,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Дарья\OneDrive\Рабочий стол\SHIFR\Shifr\Karpova\Shifr_Hilla\Shifr_Hilla.cpp(18,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Дарья\OneDrive\Рабочий стол\SHIFR\Shifr\Karpova\Shifr_Hilla\Shifr_Hilla.cpp(60,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Дарья\OneDrive\Рабочий стол\SHIFR\Shifr\Karpova\Shifr_Hilla\Shifr_Hilla.cpp(61,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Дарья\OneDrive\Рабочий стол\SHIFR\Shifr\Karpova\Shifr_Hilla\Shifr_Hilla.cpp(78,11): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Дарья\OneDrive\Рабочий стол\SHIFR\Shifr\Karpova\Shifr_Hilla\Shifr_Hilla.cpp(95,25): warning C4244: аргумент: преобразование "_Rep" в "int", возможна потеря данных
           with
           [
               _Rep=__int64
           ]
-C:\Users\Дарья\OneDrive\Рабочий стол\SHIFR\Shifr\Karpova\Shifr_Hilla\Shifr_Hilla.cpp(75,25): warning C4244: return: преобразование "_Rep" в "int", возможна потеря данных
+C:\Users\Дарья\OneDrive\Рабочий стол\SHIFR\Shifr\Karpova\Shifr_Hilla\Shifr_Hilla.cpp(96,25): warning C4244: return: преобразование "_Rep" в "int", возможна потеря данных
           with
           [
               _Rep=__int64
           ]
-  Source.cpp
-  Создание кода...
   Shifr_Hilla.vcxproj -> C:\Users\Дарья\OneDrive\Рабочий стол\SHIFR\Shifr\Karpova\Shifr_Hilla\Debug\Shifr_Hilla.exe
