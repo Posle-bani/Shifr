@@ -2,6 +2,6 @@
 #include <iostream>
 #include <string>
 #include<vector>
+#include"Header.h"
 
-
-int Hill_encryption(std::string word);
+string Hill_encryption(Shifr p);

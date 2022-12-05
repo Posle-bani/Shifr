@@ -1,7 +1,3 @@
 ﻿  Anton(Affin method).cpp
-C:\Users\Anton_K\Desktop\2Kurs\shifr\Shifr\Anton(Affin method)\Anton(Affin method)\Anton(Affin method).cpp(2,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
-C:\Users\Anton_K\Desktop\2Kurs\shifr\Shifr\Anton(Affin method)\Anton(Affin method)\Anton(Affin method).cpp(74,37): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Anton_K\Desktop\2Kurs\shifr\Shifr\Anton(Affin method)\Anton(Affin method)\Anton(Affin method).cpp(101,68): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Anton_K\Desktop\2Kurs\shifr\Shifr\Anton(Affin method)\Anton(Affin method)\Anton(Affin method).cpp(113,92): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Anton_K\Desktop\2Kurs\shifr\Shifr\Anton(Affin method)\Anton(Affin method)\Anton(Affin method).cpp(142,18): error C2660: Affin_method: функция не принимает 0 аргументов
-C:\Users\Anton_K\Desktop\2Kurs\shifr\Shifr\Anton(Affin method)\Anton(Affin method)\Anton(Affin method).cpp(124,6): message : см. объявление "Affin_method"
+MSVCRTD.lib(exe_main.obj) : error LNK2019: ?????? ?? ????????????? ??????? ?????? main ? ??????? "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ).
+C:\Users\Anton_K\Desktop\2Kurs\shifr\Shifr\Anton(Affin method)\Anton(Affin method)\x64\Debug\Anton(Affin method).exe : fatal error LNK1120: ????????????? ??????? ?????????: 1

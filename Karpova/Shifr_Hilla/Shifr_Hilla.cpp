@@ -2,53 +2,91 @@
 #include <math.h>
 #include "Shifr_Hilla.h"
 #include <string>
-#include <chrono>
 #include <vector>
+#include "Header.h"
 
-using namespace std::chrono;
+using namespace std;
 
 //Ключ матрица, заданная изначально
-std:: vector<int> key = { 1, 2, 3, 7, 5, 4, 8, 2, 7 };
+
+string symbols;
+vector<int> key = {};
+
+vector<int> KEY(string keyword)
+{
+	for (int s = 0; s < keyword.length(); s++) {
+		for (int c = 0; c < symbols.length();c++ )
+		{
+			if (keyword[s] == symbols[c])
+			{
+				key.push_back(c);
+				//cout << c << endl;
+			}
+		}
+	}
+	return key;
+}
 
 //алфавит
 
+string alphabet() {
+	string alpabet = "";
+	for (int i = 'A'; i <= 'Z'; i++)
+		alpabet += (char)i;
+	for (int i = 'a'; i <= 'z'; i++)
+		alpabet += (char)i;
+	return alpabet;
+}
 
-int Hill_encryption(std::string word)
-{
-	//std::string word;
-	//std:: cout << "\nInput word";
-	//std:: cin.clear();
-	//std:: cin.ignore(INT_MAX, '\n');
-	//getline(std:: cin, word);
- 
-	auto start = steady_clock::now();
+void output(int n) {
 
-	if ((word.length() != 0) and (word.length() % 3 != 0))
+	cout << n << endl;
+}
+
+string Hill_encryption(Shifr p)
+{	
+	symbols = alphabet();
+
+	key = KEY(p.keyword);
+
+	if ((p.word.length() != 0) and (p.word.length() % 3 != 0))
 	{
-		int amount = 3 - word.length() % 3;
+		int amount = 3 - p.word.length() % 3;
 		for (int i(0); i < amount; ++i)
-			word += '#';
+			p.word += 'A';
 	}
-	//cout << endl << word.length() <<" "<< word;
+
+	for (int s = 0; s < p.word.length();s++) {
+		for (int c = 0; c < symbols.length(); )
+		{
+			if (p.word[s] == symbols[c])
+			{
+				p.word[s] = c;
+				c++;
+				//cout << c << endl;
+			}
+			else
+				c++;
+		}
+	}
+	//cout << word << endl;
+
 
 	int i(0);
-	std:: string outputword = "";
-	while (i < word.length() - 1) {
+	string outputword = "";
+	while (i < p.word.length() - 1) {
 		for (int j(0); j < 3; ++j) {
-			//при шифровании по Хиллу мы используем mod52 для замены символов(так как в вводятся заглавные и строчные буквы английского алфавита)
-			int letter = (word[i] * key[j * 3 + 0] + word[i + 1] * key[j * 3 + 1] + word[i + 2] * key[j * 3 + 2]) % 52;
-			outputword += (char)letter;
+			//при шифровании по Хиллу мы используем mod26 для замены символов(так как в вводятся заглавные и строчные буквы английского алфавита)
+			int letter = (p.word[i] * key[j * 3 + 0] + p.word[i + 1] * key[j * 3 + 1] + p.word[i + 2] * key[j * 3 + 2]) % 26;
+			outputword += symbols[letter+1];
 		}
 		i += 3;
 	}
 
-	auto end = steady_clock::now();
-	auto elapsed_ms = duration_cast<microseconds>(end - start);
 
-	//std::cout << std::endl << outputword << std::endl;
-	//std::cout << std::endl << elapsed_ms.count() << std::endl;
-	
+	//cout << endl << outputword <<endl;
+	//cout << endl << elapsed_ms.count() <<endl;
 
-	return elapsed_ms.count();
+	return outputword;
 }
 
