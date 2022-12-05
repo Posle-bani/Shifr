@@ -15,7 +15,7 @@ void zapoln_alphavit(vector <char>& alphavit) //заполнение алфавита всей кодиров
     iota(alphavit.begin(), alphavit.end(), 'A');
 }
 
-void zapoln_keys(keys& key, vector <int>& alpha, vector <int>& beta)  //переприсваивание нужных мне ключей из структуры
+void zapoln_keys(Encryption key, vector <int>& alpha, vector <int>& beta)  //переприсваивание нужных мне ключей из структуры
 {
     alpha.resize(2);
     beta.resize(2);
@@ -25,7 +25,7 @@ void zapoln_keys(keys& key, vector <int>& alpha, vector <int>& beta)  //переприс
     beta[1] = key.affrecb2;
 }
 
-void Galimov(string& slovo, keys& key)  //сама функци€
+void Galimov(Encryption key)  //сама функци€
 {
     int kolvo = 0, poz = 0, sh_poz = 0;
     vector <char> alphavit(256);
@@ -33,10 +33,10 @@ void Galimov(string& slovo, keys& key)  //сама функци€
     char el;
     zapoln_keys(key, alpha, beta);//ключи забираютс€ из структуры
     zapoln_alphavit(alphavit);//алфавит заполн€ю
-    kolvo = slovo.length();//смотрю количество букв в слове
+    kolvo = key.word.length();//смотрю количество букв в слове
     for (int i = 0; i < kolvo; i++)//на каждую букву шаг
     {
-        el = slovo[i];//беру нужную букву
+        el = key.word[i];//беру нужную букву
         vector<char>::iterator it = find(alphavit.begin(), alphavit.end(), el); //нахожу эту букву в алфавите и беру итератор
         if (it == alphavit.end())//проверка на нахождение буквы
         {
