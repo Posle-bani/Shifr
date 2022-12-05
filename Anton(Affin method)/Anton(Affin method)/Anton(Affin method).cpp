@@ -80,7 +80,7 @@ std::string Zashifr(const std::string& alphabet, const std::string& word_to_shif
     std::string shifr_result;
     //std::cout << "Enter word to shifr:" << std::endl;
     //std::cin >> word_to_shifr;
-    auto start_1 = std::chrono::system_clock::now();
+    //auto start_1 = std::chrono::system_clock::now();
     for (int i = 0; i < word_to_shifr.size(); i++) {
         j = search1(word_to_shifr.at(i), alphabet);                                        //ищем положение i-го символа в нашем алфавите
         if (j == -1)
@@ -89,9 +89,9 @@ std::string Zashifr(const std::string& alphabet, const std::string& word_to_shif
             shifr_result += alphabet.at(((alfa * j) + beta) % (alphabet.size()));  //дописываем в переменную out символ с расчитанным положением в алфавите
         }
     }
-    auto finish_1 = std::chrono::system_clock::now();
-    auto duration_1 = std::chrono::duration_cast<std::chrono::microseconds>(finish_1 - start_1).count();
-    std::cout << "Time shifr(mcrs): " << duration_1 << std::endl;;
+    //auto finish_1 = std::chrono::system_clock::now();
+    //auto duration_1 = std::chrono::duration_cast<std::chrono::microseconds>(finish_1 - start_1).count();
+    //std::cout << "Time shifr(mcrs): " << duration_1 << std::endl;;
     return shifr_result;
 }
 
@@ -124,7 +124,7 @@ void Affin_method(const std::string& word_to_shifr, const int& alfa, const int& 
 {
     //std::string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     std::string alphabet = "\n !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
-    std::cout << "Alphabet size: " << alphabet.size() << std::endl;
+    //std::cout << "Alphabet size: " << alphabet.size() << std::endl;
     while (NOD(alfa, (int)alphabet.size()) != 1) { //убрать во время защиты
         std::cout << "Input correct number key!" << std::endl;//убрать во время защиты
         //alfa = GetCorrectNumber(1, (int)alphabet.size() - 1);
