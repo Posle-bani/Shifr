@@ -11,9 +11,9 @@ using namespace std;
 
 //Рекуррентный аффинный шифр
 
-//struct keys        //структура общая для ключей  
+//struct keys
 //{
-//    int affreca1 = 26, affrecb1 = 6, affreca2 = 6, affrecb2 = 2;
+//    int affreca1 = 1, affrecb1 = 1, affreca2 = 1, affrecb2 = 1;
 //};
 //
 //void zapoln_alphavit(vector <char>& alphavit) //заполнение алфавита всей кодировкой ACII
@@ -34,10 +34,9 @@ using namespace std;
 //void Galimov(string& slovo, keys& key)  //сама функция
 //{
 //    int kolvo = 0, poz = 0, sh_poz = 0;
-//    string shslovo;
 //    vector <char> alphavit(256);
 //    vector <int> shifr, alpha, beta;
-//    char el, sh_el;
+//    char el;
 //    zapoln_keys(key, alpha, beta);//ключи забираются из структуры
 //    zapoln_alphavit(alphavit);//алфавит заполняю
 //    kolvo = slovo.length();//смотрю количество букв в слове
@@ -54,29 +53,51 @@ using namespace std;
 //            poz = distance(alphavit.begin(), it);   //https://www.techiedelight.com/ru/find-index-element-vector-cpp/ нахожу позицию в алфавите
 //            if (i == 0 || i == 1) //первые два раза коэф по вводу
 //            {
-//                shifr.push_back((poz * alpha[i] + beta[i]) % alphavit.size()); //заношу в вектор позицию зашифрованной буквы
 //                sh_poz = (poz * alpha[i] + beta[i]) % alphavit.size(); //позиция зашифрованной буквы
-//                cout << alphavit[sh_poz];//вывожу зашифрованную букву          
+//                shifr.push_back(alphavit[sh_poz]); //заношу в вектор зашифрованную букву
+//                //cout << alphavit[sh_poz];//вывожу зашифрованную букву          
 //            }
 //            else //тут после второй итерации ключи сами создаются по формуле
 //            {
 //                alpha.push_back((alpha[i - 2] * alpha[i - 1]) % alphavit.size()); //считаю новую альфу
 //                beta.push_back((beta[i - 2] + beta[i - 1]) % alphavit.size());  //считаю новую бетту
-//                shifr.push_back((poz * alpha[i] + beta[i]) % alphavit.size());  //заношу в вектор позицию зашифрованной буквы
 //                sh_poz = (poz * alpha[i] + beta[i]) % alphavit.size();
-//                cout << alphavit[sh_poz]; //вывожу зашифрованную букву               
+//                shifr.push_back(alphavit[sh_poz]);  //заношу в вектор зашифрованную букву               
+//                //cout << alphavit[sh_poz]; //вывожу зашифрованную букву               
 //            }
 //        }
 //    }
-//    cout << endl << "Recurent Affin Shifr" << endl;
+//    //cout << endl << "Recurent Affin Shifr" << endl;
 //}
 
+//void deshifr_Galimov(keys& key)
+//{
+//    string sh_slovo;
+//    int kolvo_sh_bukv;
+//    vector <char> alphavit(256);
+//    vector <int> alpha, beta;
+//    zapoln_alphavit(alphavit);//алфавит заполняю
+//    zapoln_keys(key, alpha, beta);//ключи забираются из структуры
+//    cout << "Введите шифрованный текст" << endl;
+//    getline(cin >> ws, sh_slovo);
+//    kolvo_sh_bukv = sh_slovo.length();
+//    if (kolvo_sh_bukv > 2)
+//    {
+//
+//    }
+//    else
+//    {
+//
+//    }
+//}
 
 int main()
 {
-    setlocale(LC_ALL, "Russian");
+    //setlocale(LC_ALL, "Russian");
     keys key;
-    string slovo="abcd";//тут ввести чему оно равно  
+    string slovo="ABCD";//тут ввести чему оно равно  
     Galimov(slovo,key);
+
+    //deshifr_Galimov(key);
 }
 

@@ -9,6 +9,7 @@
 
 using namespace std;
 
+
 void zapoln_alphavit(vector <char>& alphavit) //заполнение алфавита всей кодировкой ACII
 {
     iota(alphavit.begin(), alphavit.end(), 'A');
@@ -27,10 +28,9 @@ void zapoln_keys(keys& key, vector <int>& alpha, vector <int>& beta)  //переприс
 void Galimov(string& slovo, keys& key)  //сама функци€
 {
     int kolvo = 0, poz = 0, sh_poz = 0;
-    string shslovo;
     vector <char> alphavit(256);
     vector <int> shifr, alpha, beta;
-    char el, sh_el;
+    char el;
     zapoln_keys(key, alpha, beta);//ключи забираютс€ из структуры
     zapoln_alphavit(alphavit);//алфавит заполн€ю
     kolvo = slovo.length();//смотрю количество букв в слове
@@ -47,20 +47,19 @@ void Galimov(string& slovo, keys& key)  //сама функци€
             poz = distance(alphavit.begin(), it);   //https://www.techiedelight.com/ru/find-index-element-vector-cpp/ нахожу позицию в алфавите
             if (i == 0 || i == 1) //первые два раза коэф по вводу
             {
-                shifr.push_back((poz * alpha[i] + beta[i]) % alphavit.size()); //заношу в вектор позицию зашифрованной буквы
                 sh_poz = (poz * alpha[i] + beta[i]) % alphavit.size(); //позици€ зашифрованной буквы
-                cout << alphavit[sh_poz];//вывожу зашифрованную букву          
+                shifr.push_back(alphavit[sh_poz]); //заношу в вектор зашифрованную букву
+                //cout << alphavit[sh_poz];//вывожу зашифрованную букву          
             }
             else //тут после второй итерации ключи сами создаютс€ по формуле
             {
                 alpha.push_back((alpha[i - 2] * alpha[i - 1]) % alphavit.size()); //считаю новую альфу
                 beta.push_back((beta[i - 2] + beta[i - 1]) % alphavit.size());  //считаю новую бетту
-                shifr.push_back((poz * alpha[i] + beta[i]) % alphavit.size());  //заношу в вектор позицию зашифрованной буквы
                 sh_poz = (poz * alpha[i] + beta[i]) % alphavit.size();
-                cout << alphavit[sh_poz]; //вывожу зашифрованную букву               
+                shifr.push_back(alphavit[sh_poz]);  //заношу в вектор зашифрованную букву               
+                //cout << alphavit[sh_poz]; //вывожу зашифрованную букву               
             }
         }
     }
-    cout << endl << "Recurent Affin Shifr" << endl;
+    //cout << endl << "Recurent Affin Shifr" << endl;
 }
-
