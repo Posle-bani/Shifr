@@ -4,4 +4,4 @@
 #include<vector>
 
 
-int Hill_encryption(std::string word);
+int Hill_encryption(std::string keyword, std::string word);
