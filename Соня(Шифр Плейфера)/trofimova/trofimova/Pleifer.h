@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <cctype>
+#include "Header1.h"
 
-int Encryption_pleifer(string word);
+void Encryption_pleifer(Encryption p);
 

@@ -9,13 +9,15 @@
 
 using namespace std;
 
-int check(int& x, int min, int max);
-
-void input_a_b(vector <int>& alpha, vector <int>& beta);
+//struct keys
+//{
+//    int affreca1 = 26, affrecb1 = 6, affreca2 = 6, affrecb2 = 2;
+//
+//};
 
 void zapoln_alphavit(vector <char>& alphavit);
 
-void slovo_kolvo(string& slovo, int& kolvo);
+void zapoln_keys(Encryption key, vector <int>& alpha, vector <int>& beta);
 
-void Galimov(string& slovo);
+void Galimov(Encryption key);
 
