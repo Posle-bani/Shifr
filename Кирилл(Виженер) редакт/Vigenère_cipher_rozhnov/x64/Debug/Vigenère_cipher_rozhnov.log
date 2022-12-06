@@ -1,0 +1,4 @@
+﻿  Vigenère_cipher_rozhnov.cpp
+C:\Users\Кирилл\Desktop\labs GITHUB\Shifr\Кирилл(Виженер) редакт\Vigenère_cipher_rozhnov\Vigenère_cipher_rozhnov.cpp(62,23): warning C4244: =: преобразование "__int64" в "int", возможна потеря данных
+C:\Users\Кирилл\Desktop\labs GITHUB\Shifr\Кирилл(Виженер) редакт\Vigenère_cipher_rozhnov\Vigenère_cipher_rozhnov.cpp(66,26): warning C4244: =: преобразование "__int64" в "int", возможна потеря данных
+  Vigenère_cipher_rozhnov.vcxproj -> C:\Users\Кирилл\Desktop\labs GITHUB\Shifr\Кирилл(Виженер) редакт\x64\Debug\Vigenère_cipher_rozhnov.exe

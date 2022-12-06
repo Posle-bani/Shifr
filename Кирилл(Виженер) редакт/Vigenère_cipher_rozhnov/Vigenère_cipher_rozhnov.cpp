@@ -1,117 +1,89 @@
 ﻿#include <iostream>
 #include <string>
-#include <chrono>
+#include <vector>
+#include <numeric>
+#include <algorithm>
+#include "Header.h"
 #include "Vigenere.h"
 
 using namespace std;
-using namespace chrono;
+string D;
 
-string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&'()*+,-./0123456789:;<=>?@ ";
 
-// функция получения кода символа
-//ищем сивмол в алфавите и возращаем его номер.
-int keycode(char s) {
-    for (int i = 0; i < alphabet.length(); i++) {//для i меньше длины алфавита увеличивается на одно значение. начинаем с нуля, так как для шифра индексы для букв начинаются с нуля.
-        if (s == alphabet[i])
-            return i;
-    }
-    return 0;//если после прохождения цикла не нашлась буква, то возвращаем ноль.
-}
-
-string Encode(string text, string key) {
-    string code;//keycode(text[i]) число каждой буквы текста
-    //keycode(key[i]) число каждой буквы ключа
-    //keycode(key[i % key.length()]) делим по модулю длины ключа, чтобы ключ растянулся по вводимому тексту
-    for (int i = 0; i < text.length(); i++) {
-        code += alphabet[(keycode(text[i]) + keycode(key[i % key.length()])) % alphabet.length()];
-    }
-    return code;
-}
-
-string Decode(string text, string key) {
-    string code;
-    for (int i = 0; i < text.length(); i++) {
-        code += alphabet[(keycode(text[i]) - keycode(key[i % key.length()]) + alphabet.length()) % alphabet.length()];//прибалвяем длину алфавита, чтобы избежать отрицательные числа
-    }
-    return code;
-}
-
-void in()
+//struct Encryption
+//{
+//    string word = "pipec";
+//    string keyword = "aklmn";
+//};
+/*void ops(string word, string keyword) //растягиваем ключ, если его длина меньше длины слова.
 {
-    string txt, key;
-    char x;
-    cout << "Encode(1) or Decode(2)" << endl;
-    cin >> x;
-
-    if (x != '1' && x != '2') {
-        cout << "Check if the entered value is correct" << endl;//проверка на корректность
-        exit(0);
-    }
-    cout << "Enter text without spaces: ";
-    cin >> txt;
-    cout << "Enter key: ";
-    cin >> key;
-
-    //если пользователь текст или ключ в разных регистрах, нам нужно привести с верхнему регистру(ЗАГЛАВНЫЕ БУКВЫ):
-    for (auto& c : txt) c = toupper(c);
-    for (auto& c : key) c = toupper(c);
-
-    if (x == '1') cout << Encode(txt, key);
-    if (x == '2') cout << Decode(txt, key);
-}
-
-int main() {
-    /*setlocale(LC_ALL, "Russian");
-    string txt, key;
-    char x;
-    cout << "Encode(1) or Decode(2)" << endl;
-    cin >> x;
-
-    if (x != '1' && x != '2') {
-        cout << "Check if the entered value is correct" << endl;//проверка на корректность
-        exit(0);
-    }
-
-    //cout << "Enter text without spaces: ";
-    //cin >> txt;
-    //cout << "Enter key: ";
-    //cin >> key;
-
-    //for (auto& c : txt) c = toupper(c);
-    //for (auto& c : key) c = toupper(c);
-*/
-// Получаем момент времени_1
-    system_clock::time_point start = system_clock::now();
-    //if (x == '1') cout << Encode(txt, key);
-    in();
-    //if (x == '2') cout << Decode(txt, key);
-    // Получаем момент времени_2
-    system_clock::time_point end = system_clock::now();
-    // Определяем тип объекта интервала и вычисляем его значение
-    duration<double> sec = end - start;
-    cout
-        << "\nProgram execution time:"
-        << "\n" << duration_cast<microseconds>(end - start).count() << " microseconds\n"
-        << duration_cast<nanoseconds>(end - start).count() << " nanoseconds\n";
-}
-/*
-string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&'()*+,-./0123456789:;<=>?@";
-string znaki = "#$%&'()*+,-./0123456789:;<#$%&'()*+,-./0123456789:;<=>?@";
-
-// функция получения кода символа
-//ищем сивмол в алфавите и возращаем его номер.
-int keycode(char s) {
-    for (int i = 0; i < alphabet.length(); i++) {//для i меньше длины алфавита увеличивается на одно значение. начинаем с нуля, так как для шифра индексы для букв начинаются с нуля.
-        for (int c = 0; c < znaki.length(); c++)
+    if (word.length() >= keyword.length())
+    {
+        for (int i = 0; i < (word.length() / keyword.length()); i++)
         {
-            if (alphabet[i] == znaki[c]) {
-                (s == znaki[c]);
-                return c;
-            }
-            else
-                (s == alphabet[i]);
-            return i;
+            D = D + keyword;
         }
     }
-    return 0;//если после прохождения цикла не нашлась буква, то возвращаем ноль.
-}*/
+    else {
+        for (int j = 0; j < (word.length() % keyword.length()); j++)
+        {
+            D = D + keyword[j];
+        }
+    }
+
+}
+*/
+void Encode(vector <char> alphabet, string word, string keyword)
+{
+    string code;
+    int poz = 0;//индекс буквы
+    char el;
+    int sh_key, sh_poz;
+    char sh_el;
+    for (size_t i = 0; i < word.length(); i++)
+    {
+        if (word.length() >= keyword.length())
+        {
+            for (int i = 0; i < (word.length() / keyword.length()); i++)
+            {
+                D = D + keyword;
+            }
+        }
+        else {
+            for (int j = 0; j < (word.length() % keyword.length()); j++)
+            {
+                D = D + keyword[j];
+            }
+        }
+
+        //keyword = keyword + keyword + keyword;
+        el = word[i];
+        vector<char>::iterator it = find(alphabet.begin(), alphabet.end(), el);
+        poz = distance(alphabet.begin(), it); //номер буквы в алфавите из слова   
+
+        sh_el = D[i];//считываю по буквам пароль
+        vector<char>::iterator it2 = find(alphabet.begin(), alphabet.end(), sh_el);//нахожу итератор его позиции в алфавите
+        sh_key = distance(alphabet.begin(), it2); //нахожу его позицию в алфавите(пароля)
+        //sh_key2 = sh_key
+
+        sh_poz = (poz + sh_key) % alphabet.size(); //складываем номер буквы из слова на номер буквы из пароля
+
+        cout << alphabet[sh_poz];
+        //cout << "\n" << sh_key << endl;
+        //cout << "\n" << keyword.length() << endl;
+        //cout << "\n" << D << endl;
+    }
+}
+int main()
+//void Vigenere_cipher(Encryption p)
+{
+    //setlocale(LC_ALL, "Russian");
+
+    Encryption p;
+
+    vector <char> alphabet(256);
+    iota(alphabet.begin(), alphabet.end(), 'A');
+    string keyword = p.keyword;
+    string word = p.word;
+    Encode(alphabet, word, keyword);
+}

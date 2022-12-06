@@ -2,4 +2,5 @@
 #include <iostream>
 #include <string>
 
-int main();
+void Vigenere_cipher(Encryption p);
+//void Vigenere_cipher(std::string word, std::string keyword);
