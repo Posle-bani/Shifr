@@ -4,6 +4,7 @@
 #include <string>
 #include <cctype>
 #include <chrono>
+#include "Header1.h"
 
 
 using namespace std;
@@ -156,14 +157,13 @@ using namespace std::chrono;
 //    }
 //}
 
-int main ()
-//string Encryption_pleifer(Encryption p) 
+
+void Encryption_pleifer(Encryption p)
 {
-    Encryption p;
     vector<int> index;
     string alphabet = "abcdefghijklmnoprstuvwxyz";
     char matrix[5][5];
-    auto start = steady_clock::now();
+
     //key check
     int q = 0;
     while (q == 0) {
@@ -174,6 +174,10 @@ int main ()
         for (int i = 0; i < p.keyword.length(); i++) {
             if (isupper(p.keyword[i])) p.keyword[i] = tolower(p.keyword[i]);
         }
+        for (int i = 0; i < p.keyword.length(); i++) {
+            if (isalpha(p.keyword[i])) q = 1;
+        }
+        //cout << "PR";
     };
     // delete double
     for (int i = 1; i < p.keyword.length(); i++) {
@@ -197,13 +201,20 @@ int main ()
         for (int i = 0; i < p.word.length(); i++) {
             if (isupper(p.word[i])) p.word[i] = tolower(p.word[i]);
         }
+        for (int i = 0; i < p.word.length(); i++) {
+            if (isalpha(p.word[i]))  l = 1;
+        }
     };
+    //cout << "PR2";
     //double message check
     for (int i = 0; i < p.word.length(); i++) {
         if (p.word[i] == p.word[i + 1]) p.word.insert(i + 1, 1, 'x');
+        //cout << "PR5";
     };
+
     //add symbol
     if (p.word.length() % 2 != 0) p.word.push_back('x');
+    //cout << "PR3";
     //bygrams formation
     for (int i = 0; i < p.word.length(); i += 2) {
         p.word[i] << p.word[i + 1];
@@ -221,6 +232,7 @@ int main ()
             }
             k++;
         }
+        //cout << "PR4";
     };
     //find id
     for (int i = 0; i < p.word.length(); i++) {
@@ -234,7 +246,6 @@ int main ()
         }
     }
     //enmessage
-   
     string outputword = "";
     int a = 0, b = 0;
     /*cout << "encrypted sequence: " << endl;*/
@@ -243,7 +254,7 @@ int main ()
         // åñëè íà îäíîé ñòðîêå
         if (index[i] == index[i + 2] && a < 5) {
             /*cout.width(5);
-            cout <<*/ outputword+=matrix[index[i]][index[i + 1] + 1] << matrix[index[i + 2]][a];
+            cout <<*/outputword += matrix[index[i]][index[i + 1] + 1] << matrix[index[i + 2]][a];
         }
         // åñëè íà îäíîé ñòðîêå è ó êðàÿ
         if (index[i] == index[i + 2] && a >= 5) {
@@ -285,9 +296,8 @@ int main ()
 
     //auto start = steady_clock::now();
     //Enmessage(index, matrix);
-    auto end = steady_clock::now();
-    auto elapsed_ms = duration_cast<microseconds>(end - start);
-    cout << elapsed_ms.count() << endl;
+    //auto end = steady_clock::now();
+    //auto elapsed_ms = duration_cast<microseconds>(end - start);
 
     //return outputword;
 }
