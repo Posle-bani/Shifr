@@ -11,7 +11,7 @@ void decode(std::string message);
 std::string vigenereCode(std::string message, std::string key);
 std::string vigenereDecode(std::string message, std::string key);
 
-struct Shifr
+struct p
 {
 	int a=3;
 	std::string word="hutjoidfl;swpva0esronbhkcpx;/a4etbgrcdx][.tugbtvraec[]dtugdsl;:)";
